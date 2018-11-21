@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.5.1",
     "@types/jest": "23.3.9",
     "@types/node": "10.12.9",
     "@types/react": "16.7.6",
@@ -28,5 +29,21 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "husky": "^1.2.0",
+    "lint-staged": "^8.0.5",
+    "prettier": "^1.15.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.*": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
